@@ -1,0 +1,25 @@
+Install both apks in an android device (allow third party application installs first)
+
+For Admin App:
+
+Sign in using the google sign in button and any actual gmail address and it's appropriate password 
+
+Use id as "test"and password as "test" for the next admin credentials that will be asked
+
+You are inside the app now.
+
+
+For User App:
+
+Sign in using the google sign in button and any actual gmail address and it's appropriate password 
+
+You are inside the app now.
+
+
+Test Case:
+
+Try submitting a news from user app, it will not be published in user app directly.
+Then go to the admin app and view your recently submitted news in the section that you submitted it. 
+(swipe right on screen to open side navigation drawer to change the sections)
+Approve the news using the tick button.
+Go to user app and watch the news getting published.
