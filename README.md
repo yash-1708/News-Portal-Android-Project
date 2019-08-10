@@ -13,8 +13,8 @@ https://github.com/yash-1708/News-Portal_Android-Project-User-App
 
 OVERVIEW & WORKING:
 
--This is a news portal for a college, it intends to help in the efficient and effortless transfer of news within a college
-there are two apps, one for the admin and one for the user.
+-This is a news portal for a college, it intends to help in the efficient and effortless transfer of news within a college.
+ There are two apps, one for the admin and one for the user.
 The Admin app is supposed to be given to professors and the user app is supposed to be given to the students
 
 -Students can see published news on the app and submit their own news that they see everyday and these submissions will be stored in the database as unapproved news and will not be visible to the general users but will only be visible to the admins.
