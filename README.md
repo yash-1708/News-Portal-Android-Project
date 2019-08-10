@@ -7,6 +7,8 @@ Complete 2 App System for the News Portal of a College created for Android with 
 
 *Sign in with any gmail login to bypass the email login step*
 
+*The APKs for the apps can be found in the Final APKs folder in the master branch*
+
 This was an android project created by me as a mini project for my college.
 The project consists of two android applications, but since I couldn't publish both of them in the same repository, I have given the link to the user app's repository below
 https://github.com/yash-1708/News-Portal_Android-Project-User-App
