@@ -33,3 +33,7 @@ The news submitted by students will only be published in the user apps after an 
 -Admins can see unapproved news highlighted in red which they may then edit and/or approve and approved news highlighted in green which they may then edit or delete(One click on edit button in admin app makes news editable and another click on same button updates editedd news in database.)
 
 -Users (students) are only allowed to view approved news and submit news
+
+Actual Code can be found inthe following path of this repository:-
+
+app/src/main/java/te_compa/mcoe_news_portal/
