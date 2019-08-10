@@ -25,7 +25,7 @@ public class DevInfo extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     mTextMessage.setText(R.string.title_home);
-                    colImage.setImageResource(R.mipmap.aboutusimage);
+                    colImage.setImageResource(R.mipmap.devpic);
                     mTextMessage2.setText(R.string.devIntro);
                     return true;
                 case R.id.navigation_dashboard:
@@ -38,27 +38,23 @@ public class DevInfo extends AppCompatActivity {
             return false;
         }
     };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dev_info);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar3);
+        Toolbar toolbar = findViewById(R.id.toolbar3);
         setSupportActionBar(toolbar);
-        //toolbar.setTitle("News");
-
         if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
         colImage = findViewById(R.id.DevImage);
-
-        mTextMessage = (TextView) findViewById(R.id.message);
-        mTextMessage2=findViewById(R.id.DevIntro);
+        mTextMessage = findViewById(R.id.message);
+        mTextMessage2 = findViewById(R.id.DevIntro);
         mTextMessage.setText(R.string.title_home);
-        colImage.setImageResource(R.mipmap.aboutusimage);
+        colImage.setImageResource(R.mipmap.devpic);
         mTextMessage2.setText(R.string.devIntro);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

@@ -82,7 +82,7 @@ public class Submissions extends AppCompatActivity {
         types.setAdapter(myAdapter);
         name = findViewById(R.id.name);
         article = findViewById(R.id.article);
-        Button subButton = findViewById(R.id.submitButton);
+        final Button subButton = findViewById(R.id.submitButton);
         imgbutton=findViewById(R.id.imageButton);
         imageView=findViewById(R.id.newsimage);
 
@@ -117,7 +117,7 @@ public class Submissions extends AppCompatActivity {
                     article.setError( "News Article is required!" );
                     return;
                 }
-
+                subButton.setEnabled(false);
                 if(filePath!=null)
                     uploadImage();
                 else
@@ -184,7 +184,7 @@ public class Submissions extends AppCompatActivity {
                             progressDialog.dismiss();
                             imageUrl = taskSnapshot.getDownloadUrl().toString();
                             Toast.makeText(Submissions.this, "Uploaded Sucessfully", Toast.LENGTH_SHORT).show();
-                            writeToDb(name.getText().toString(), article.getText().toString(),types.getSelectedItem().toString() ,false);
+                            writeToDb(name.getText().toString(), article.getText().toString(),types.getSelectedItem().toString() ,true);
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -192,6 +192,7 @@ public class Submissions extends AppCompatActivity {
                         public void onFailure(@NonNull Exception e) {
                             progressDialog.dismiss();
                             Toast.makeText(Submissions.this, "Failed "+e.getMessage(), Toast.LENGTH_SHORT).show();
+
                         }
                     })
                     .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {

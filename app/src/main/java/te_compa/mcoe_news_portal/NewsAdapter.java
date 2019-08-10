@@ -17,7 +17,6 @@ public class NewsAdapter extends ArrayAdapter<newsData> {
     public NewsAdapter(Context context, int resource, List<newsData> objects) {
         super(context, resource, objects);
     }
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
@@ -25,36 +24,23 @@ public class NewsAdapter extends ArrayAdapter<newsData> {
                     .inflate(R.layout.item_news, parent,
                             false);
         }
-
-        TextView newsTitle = (TextView) convertView.findViewById(R.id.newsTitleView);
-        TextView dateview = (TextView) convertView.findViewById(R.id.dateTextView);
-        TextView introview = (TextView) convertView.findViewById(R.id.introTextView);
+        TextView newsTitle = convertView.findViewById(R.id.newsTitleView);
+        TextView dateview = convertView.findViewById(R.id.dateTextView);
+        TextView introview = convertView.findViewById(R.id.introTextView);
         newsData news = getItem(position);
-
-        /* TO BE USED FOR ADMIN APP. APPROVED COLOURATION.
-
         if(news.getApproved()){
-            convertView.setBackgroundColor(Color.rgb(125, 214, 115));
+            convertView.setBackgroundColor(Color.argb(171,145,247,159));
+        } else {
+            convertView.setBackgroundColor(Color.argb(171,250,62,62));
         }
-        else
-        {
-            convertView.setBackgroundColor(Color.rgb(221, 119, 119));
-        }
-
-         */
-
-
-
         int artLen = news.article.length();
         if(artLen > 25){
             artLen = 25;
         }
-
-                newsTitle.setText(news.newsTitle);
+        newsTitle.setText(news.newsTitle);
         SimpleDateFormat dateFormatter = new SimpleDateFormat("E, MMM d 'at' h:m a");
         dateview.setText(dateFormatter.format(news.date));
         introview.setText(news.article.substring(0,artLen)+"...");
-
         return convertView;
     }
 }

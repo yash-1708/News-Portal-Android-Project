@@ -5,49 +5,95 @@
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#eeffffff"
     android:fitsSystemWindows="true"
     tools:context=".NewsDetails">
 
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="368dp"
-        android:layout_height="487dp"
-        android:layout_marginBottom="12dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="-1dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/newsDtitle"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
                 android:text="Headlines"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
-            <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="240dp" />
+
+            <ImageView
                 android:id="@+id/newsDimage"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="219dp"
                 android:adjustViewBounds="true"
+                android:background="@drawable/border"
+                android:clickable="true"
                 android:maxHeight="350dp"
                 android:scaleType="centerInside" />
 
-            <TextView
-                android:id="@+id/newsDarticle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/newsDarticle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/adamina"
+                    android:inputType="textMultiLine"
+                    android:text="TextView"
+                    android:textColor="@drawable/edit_text_selector" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:layout_weight="1" />
+
+            </android.support.design.widget.TextInputLayout>
+
         </LinearLayout>
     </ScrollView>
 
@@ -58,30 +104,78 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginBottom="232dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="146dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.972"
-        app:layout_constraintStart_toEndOf="@+id/scrollView2"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.947" />
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="match_parent"
-        android:layout_height="63dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="-2dp"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/scrollView2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/scrollView2"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
+    <ImageButton
+        android:id="@+id/approvedButton"
+        android:layout_width="71dp"
+        android:layout_height="60dp"
+        android:background="#00FFFFFF"
+        android:src="@mipmap/approved"
+        android:tint="#81f708"
+        app:layout_constraintBottom_toBottomOf="@+id/editButton"
+        app:layout_constraintEnd_toStartOf="@+id/editButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/scrollView2" />
+
+    <ImageButton
+        android:id="@+id/deleteButton"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:background="#00FFFFFF"
+        android:src="@mipmap/delete"
+        android:tint="#FF1A1A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/scrollView2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/emailButton" />
+
+    <ImageButton
+        android:id="@+id/emailButton"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:background="#00FFFFFF"
+        android:src="@android:drawable/ic_menu_share"
+        android:tint="@android:color/holo_blue_dark"
+        app:layout_constraintBottom_toBottomOf="@+id/deleteButton"
+        app:layout_constraintEnd_toStartOf="@+id/deleteButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/editButton" />
+
+    <ImageButton
+        android:id="@+id/editButton"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/editiconpic"
+        android:tint="#FF5722"
+        app:layout_constraintBottom_toBottomOf="@+id/emailButton"
+        app:layout_constraintEnd_toStartOf="@+id/emailButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/approvedButton" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#d62727</color>
-    <color name="colorPrimaryDark">#d62727</color>
-    <color name="colorAccent">#d62727</color>
-    <color name="Black">#191919</color>
+    <color name="colorPrimary">#344955</color>
+    <color name="colorPrimaryDark">#344955</color>
+    <color name="colorAccent">#344955</color>
+    <color name="Black">#000106</color>
+    <color name="Text">#eca0a7ab</color>
+    <color name="CollegeLink">#FFFFFF</color>
+    <color name="enabled_color">#000000</color>
 </resources>
